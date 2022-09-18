@@ -1,24 +1,15 @@
 # README
+You can keep a record of your cat's care and check it on the calendar.
+You can also keep records not related to cats.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Development Environment Setup
+The following is an example.
 
-Things you may want to cover:
+```sh
+# Build the Docker image and enter neko_app container.
+% docker compose up -d build
+% docker exec -it nko_app bash
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Then, run setup task.
+% bin/setup
+```
