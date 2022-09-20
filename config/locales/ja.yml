@@ -1,0 +1,24 @@
+ja:
+  application_title: 猫カレンダー
+  activerecord:
+    models:
+      cat: 猫
+      subject: 記録対象
+    attributes:
+      cat:
+        name: 名前
+      subject:
+        name: 記録対象名
+  cats:
+    index:
+      title: 登録済みの猫
+      cat_page: 詳細を見る
+      new_cat: 新しい猫を登録する
+    show:
+      delete: 猫の情報を削除する
+    new:
+      title: 新しい猫
+    edit:
+      title: "%{cat}の情報を編集する"
+    cat:
+      name: 名前
