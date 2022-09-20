@@ -1,6 +1,5 @@
 # README
 You can keep a record of your cat's care and check it on the calendar.
-You can also keep records not related to cats.
 
 ## Development Environment Setup
 Copy `.env.sample` to `.env` and replace 'xxx' with the values appropriate your own environment.
