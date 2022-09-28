@@ -8,13 +8,18 @@ ja:
       cat:
         name: 名前
   cats:
+    successfully_created: "%{cat}を登録しました"
+    successfully_updated:  "%{cat}を更新しました"
+    successfully_destroyed:  "%{cat}の情報を削除しました"
     index:
       title: 登録済みの猫
       new_cat: 新しい猫を登録する
     new:
       title: 新しい猫
+      back_to_cats_page: 猫の一覧に戻る
     edit:
       title: "%{cat}の設定を変更する"
+      back_to_cats_page: 猫の一覧に戻る
     cat:
       name: 名前
       notation: 記録を見る
