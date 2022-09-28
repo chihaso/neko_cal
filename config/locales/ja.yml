@@ -7,25 +7,16 @@ ja:
     attributes:
       cat:
         name: 名前
-      subject:
-        name: 記録するもの
   cats:
     index:
       title: 登録済みの猫
-      cat_page: 詳細を見る
       new_cat: 新しい猫を登録する
-    show:
-      delete: 猫の情報を削除する
     new:
       title: 新しい猫
     edit:
-      title: "%{cat}の情報を編集する"
+      title: "%{cat}の設定を変更する"
     cat:
       name: 名前
       notation: 記録を見る
-      edit_notation_setting: 記録内容の設定
-  notation_settings:
-    edit:
-      title: "%{cat}の記録内容の設定"
-    form:
-      error_notation: エラーにより保存できませんでした
+      edit: 設定を変更する
+      delete: 猫の情報を削除する
