@@ -1,11 +1,13 @@
 # frozen_string_literal: true
 
 class CatsController < ApplicationController
-  before_action :set_cat, only: %i[edit update destroy]
+  before_action :set_cat, only: %i[show edit update destroy]
 
   def index
     @cats = Cat.all
   end
+
+  def show; end
 
   def new
     @cat = Cat.new
@@ -25,7 +27,7 @@ class CatsController < ApplicationController
 
   def update
     if @cat.update(cat_params)
-      redirect_to cats_path, notice: I18n.t('cats.successfully_updated', cat: @cat.name)
+      flash.now.notice = I18n.t('cats.successfully_updated', cat: @cat.name)
     else
       render :edit, status: :unprocessable_entity
     end

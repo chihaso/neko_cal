@@ -1,8 +1,6 @@
-<div id="<%= dom_id cat %>">
+<%= turbo_frame_tag "cat_setting_#{cat.id}" do %>
   <div>
-    <strong><%= t('.name') %></strong>
-    <%= cat.name %>
+    <%= t('.name', name: cat.name)%>
     <%= link_to t('.edit'), edit_cat_path(cat) %>
-    <%= button_to t('.delete'), cat, method: :delete %>
   </div>
-</div>
+<% end %>

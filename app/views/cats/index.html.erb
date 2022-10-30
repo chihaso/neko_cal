@@ -1,10 +1,14 @@
-<p style="color: green"><%= notice %></p>
-
 <h1><%= t('.title') %></h1>
 
 <div id="cats">
   <% @cats.each do |cat| %>
-    <%= render cat %>
+    <div id="<%= dom_id cat %>">
+      <div>
+        <%= cat.name %>
+        <%= link_to t('.setting'), cat_path(cat) %>
+        <%= button_to t('.delete'), cat, method: :delete %>
+      </div>
+    </div>
   <% end %>
 </div>
 
