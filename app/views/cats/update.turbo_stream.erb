@@ -1,4 +1,2 @@
-<%= turbo_stream.replace "cat_setting_#{@cat.id}" do %>
-  <%= render partial: 'cats/cat', locals: { cat: @cat } %>
-<% end %>
+<%= turbo_stream.replace @cat %>
 <%= turbo_stream.update 'flash', partial: 'flash' %>

@@ -1,5 +1,10 @@
 <h1><%= t('.title') %></h1>
 <%= render @cat %>
+<div style="margin-left: 20px">
+  <% @cat.subjects.each do |subject| %>
+    <%= render partial: 'subjects/subject', locals: { subject: subject } %>
+  <% end %>
+</div>
 <div>
   <%= link_to t('.back_to_cats_page'), cats_path %>
 </div>

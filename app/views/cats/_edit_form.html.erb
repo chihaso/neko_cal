@@ -1,4 +1,4 @@
-<%= turbo_frame_tag "cat_setting_#{cat.id}" do %>
+<%= turbo_frame_tag cat do %>
   <%= form_with(model: cat) do |form| %>
     <%= render 'validation_error_message', resource: cat %>
 
