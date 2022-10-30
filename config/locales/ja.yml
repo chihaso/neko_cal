@@ -7,6 +7,11 @@ ja:
     attributes:
       cat:
         name: 名前
+      subject:
+        name: 名前
+  application:
+    validation_error_message:
+      error_occurred: エラーが発生しました
   cats:
     successfully_created: "%{cat}を登録しました"
     successfully_updated:  "%{cat}の設定を更新しました"
@@ -28,5 +33,16 @@ ja:
       name: "名前: %{name}"
       notation: 記録を見る
       edit: 編集
-    form:
+    new_form:
+      cancel: キャンセル
+    edit_form:
+      cancel: キャンセル
+  subjects:
+    successfully_created: "%{subject}を登録しました"
+    successfully_updated:  "%{subject}の設定を更新しました"
+    successfully_destroyed:  "%{subject}の情報を削除しました"
+    subject:
+      edit: 編集
+      delete: 削除
+    edit_form:
       cancel: キャンセル

@@ -1,0 +1,7 @@
+<%= turbo_frame_tag subject do %>
+  <div style="display: flex">
+    <%= subject.name %>
+    <%= link_to t('.edit'), edit_subject_path(subject) %>
+    <%= button_to t('.delete'), subject, method: :delete %>
+  </div>
+<% end %>

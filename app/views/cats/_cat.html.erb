@@ -4,3 +4,9 @@
     <%= link_to t('.edit'), edit_cat_path(cat) %>
   </div>
 <% end %>
+<div style="margin-left: 20px">
+  <% cat.subjects.each do |subject| %>
+    <%= render partial: 'subjects/subject', locals: { subject: subject } %>
+  <% end %>
+</div>
+
