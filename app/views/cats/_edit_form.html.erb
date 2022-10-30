@@ -1,16 +1,6 @@
 <%= turbo_frame_tag "cat_setting_#{cat.id}" do %>
   <%= form_with(model: cat) do |form| %>
-    <% if cat.errors.any? %>
-      <div style="color: red">
-        <h2><%= pluralize(cat.errors.count, "error") %> prohibited this cat from being saved:</h2>
-
-        <ul>
-          <% cat.errors.each do |error| %>
-            <li><%= error.full_message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+    <%= render 'validation_error_message', resource: cat %>
 
     <div style="display: flex">
       <%= form.label :name, style: "display: block" %>
