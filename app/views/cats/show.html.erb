@@ -1,5 +1,5 @@
 <h1><%= t('.title') %></h1>
-<%= render @cat %>
+<%= render 'cat_setting', cat: @cat %>
 <div style="margin-left: 20px">
   <% @cat.subjects.each do |subject| %>
     <%= render partial: 'subjects/subject', locals: { subject: subject } %>

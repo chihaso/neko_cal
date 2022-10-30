@@ -21,6 +21,9 @@ ja:
       new_cat: 新しい猫を登録する
       setting: 設定
       delete: 削除
+    cat:
+      setting: 設定
+      delete: 削除
     show:
       title: 猫の設定
       back_to_cats_page: 猫の一覧に戻る
@@ -29,7 +32,9 @@ ja:
       back_to_cats_page: 猫の一覧に戻る
     edit:
       back_to_cats_page: 猫の一覧に戻る
-    cat:
+    create:
+      new_cat: 新しい猫を登録する
+    cat_setting:
       name: "名前: %{name}"
       notation: 記録を見る
       edit: 編集

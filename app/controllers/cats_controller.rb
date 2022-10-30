@@ -4,7 +4,7 @@ class CatsController < ApplicationController
   before_action :set_cat, only: %i[show edit update destroy]
 
   def index
-    @cats = Cat.all
+    @cats = Cat.all.order(:created_at)
   end
 
   def show; end
@@ -19,7 +19,7 @@ class CatsController < ApplicationController
     @cat = Cat.new(cat_params)
 
     if @cat.save
-      redirect_to cats_path, notice: I18n.t('cats.successfully_created', cat: @cat.name)
+      flash.now.notice = I18n.t('cats.successfully_created', cat: @cat.name)
     else
       render :new, status: :unprocessable_entity, alart: I18n.t('cats.failed_to_create')
     end

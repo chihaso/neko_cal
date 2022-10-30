@@ -2,12 +2,10 @@
 
 <div id="cats">
   <% @cats.each do |cat| %>
-    <div id="<%= dom_id cat %>" style="display: flex">
-      <%= cat.name %>
-      <%= link_to t('.setting'), cat_path(cat) %>
-      <%= button_to t('.delete'), cat, method: :delete %>
-    </div>
+    <%= render cat %>
   <% end %>
 </div>
 
-<%= link_to t('.new_cat'), new_cat_path %>
+<%= turbo_frame_tag 'new_cat' do %>
+  <%= link_to t('.new_cat'), new_cat_path %>
+<% end %>
