@@ -4,7 +4,7 @@ require 'test_helper'
 
 class CatsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @cat = cats(:one)
+    @cat = cats(:achan)
   end
 
   test 'should get index' do
@@ -19,10 +19,10 @@ class CatsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create cat' do
     assert_difference('Cat.count') do
-      post cats_url, params: { cat: { name: @cat.name } }
+      post cats_url(format: :turbo_stream), params: { cat: { name: @cat.name } }
     end
 
-    assert_redirected_to cat_url(Cat.last)
+    assert_response :success
   end
 
   test 'should show cat' do
@@ -36,11 +36,11 @@ class CatsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should update cat' do
-    patch cat_url(@cat), params: { cat: { name: @cat.name } }
-    assert_redirected_to cat_url(@cat)
+    patch cat_url(@cat, format: :turbo_stream), params: { cat: { name: @cat.name } }
+    assert_response :success
   end
 
-  test 'should destroy cat' do
+  test 'should destroy cat record' do
     assert_difference('Cat.count', -1) do
       delete cat_url(@cat)
     end
