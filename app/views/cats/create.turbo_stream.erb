@@ -1,0 +1,5 @@
+<%= turbo_stream.append 'cats', @cat %>
+<%= turbo_stream.update 'new_cat' do %>
+  <%= link_to t('.new_cat'), new_cat_path %>
+<% end %>
+<%= turbo_stream.update 'flash', partial: 'flash' %>

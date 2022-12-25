@@ -1,9 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  cat: one
+poop:
+  name: うんち
+  cat: achan
 
-two:
-  name: MyString
-  cat: two
+pee:
+  name: おしっこ
+  cat: bchan

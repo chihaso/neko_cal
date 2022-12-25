@@ -1,10 +1,12 @@
-<%= form_with(model: cat) do |form| %>
-  <%= render 'validation_error_message', resource: cat %>
+<%= turbo_frame_tag 'new_cat' do %>
+  <%= form_with(model: cat) do |form| %>
+    <%= render 'validation_error_message', resource: cat %>
 
-  <div style="display: flex">
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-    <%= form.submit %>
-    <%= link_to t('.cancel'), cats_path %>
-  </div>
+    <div style="display: flex">
+      <%= form.label :name, style: "display: block" %>
+      <%= form.text_field :name %>
+      <%= form.submit %>
+      <%= link_to t('.cancel'), cats_path %>
+    </div>
+  <% end %>
 <% end %>

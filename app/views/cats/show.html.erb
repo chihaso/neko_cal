@@ -1,8 +1,13 @@
 <h1><%= t('.title') %></h1>
-<%= render @cat %>
+<%= render 'cat_setting', cat: @cat %>
 <div style="margin-left: 20px">
-  <% @cat.subjects.each do |subject| %>
-    <%= render partial: 'subjects/subject', locals: { subject: subject } %>
+  <div id="subjects">
+    <% @cat.subjects.each do |subject| %>
+      <%= render partial: 'subjects/subject', locals: { subject: subject } %>
+    <% end %>
+  </div>
+  <%= turbo_frame_tag 'new_subject' do %>
+    <%= link_to t('.new_subject'), new_subject_path(cat_id: @cat.id) %>
   <% end %>
 </div>
 <div>

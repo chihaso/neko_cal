@@ -4,29 +4,19 @@ require 'test_helper'
 
 class SubjectsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @subject = subjects(:one)
-  end
-
-  test 'should get index' do
-    get subjects_url
-    assert_response :success
+    @subject = subjects(:poop)
   end
 
   test 'should get new' do
-    get new_subject_url
+    get new_subject_url, params: { cat_id: cats(:bchan).id }
     assert_response :success
   end
 
   test 'should create subject' do
     assert_difference('Subject.count') do
-      post subjects_url, params: { subject: { cat_id: @subject.cat_id, name: @subject.name } }
+      post subjects_url(format: :turbo_stream), params: { subject: { cat_id: @subject.cat_id, name: @subject.name } }
     end
 
-    assert_redirected_to subject_url(Subject.last)
-  end
-
-  test 'should show subject' do
-    get subject_url(@subject)
     assert_response :success
   end
 
@@ -36,15 +26,18 @@ class SubjectsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should update subject' do
-    patch subject_url(@subject), params: { subject: { cat_id: @subject.cat_id, name: @subject.name } }
-    assert_redirected_to subject_url(@subject)
+    patch(
+      subject_url(@subject, format: :turbo_stream),
+      params: { subject: { cat_id: @subject.cat_id, name: @subject.name } }
+    )
+    assert_response :success
   end
 
   test 'should destroy subject' do
     assert_difference('Subject.count', -1) do
-      delete subject_url(@subject)
+      delete subject_url(@subject, format: :turbo_stream)
     end
 
-    assert_redirected_to subjects_url
+    assert_response :success
   end
 end
