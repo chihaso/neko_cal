@@ -26,7 +26,10 @@ class SubjectsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should update subject' do
-    patch subject_url(@subject, format: :turbo_stream), params: { subject: { cat_id: @subject.cat_id, name: @subject.name } }
+    patch(
+      subject_url(@subject, format: :turbo_stream),
+      params: { subject: { cat_id: @subject.cat_id, name: @subject.name } }
+    )
     assert_response :success
   end
 
