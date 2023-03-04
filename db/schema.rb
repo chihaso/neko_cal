@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_18_125210) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_04_074448) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,6 +18,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_18_125210) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "contents", force: :cascade do |t|
+    t.string "name"
+    t.bigint "subject_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subject_id"], name: "index_contents_on_subject_id"
   end
 
   create_table "subjects", force: :cascade do |t|
@@ -28,5 +36,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_18_125210) do
     t.index ["cat_id"], name: "index_subjects_on_cat_id"
   end
 
+  add_foreign_key "contents", "subjects"
   add_foreign_key "subjects", "cats"
 end
