@@ -1,0 +1,5 @@
+<%= turbo_stream.append "#{@subject.id}_contents", @content %>
+<%= turbo_stream.update "#{@subject.id}_new_content" do %>
+  <%= link_to t('.new_content'), new_content_path(subject_id: @subject.id)  %>
+<% end %>
+<%= turbo_stream.update 'flash', partial: 'flash' %>

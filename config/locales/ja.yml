@@ -4,11 +4,14 @@ ja:
     models:
       cat: 猫
       subject: 記録対象
+      content: 記録項目
     attributes:
       cat:
         name: 名前
       subject:
         name: 名前
+      content:
+        name: 項目名
   application:
     validation_error_message:
       error_occurred: エラーが発生しました
@@ -27,6 +30,7 @@ ja:
     show:
       title: 猫の設定
       new_subject: 記録対象を追加する
+      new_content: 記録項目を追加する
       back_to_cats_page: 猫の一覧に戻る
     new:
       title: 新しい猫
@@ -52,6 +56,19 @@ ja:
       delete: 削除
     create:
       new_subject: 記録対象を追加する
+    new_form:
+      cancel: キャンセル
+    edit_form:
+      cancel: キャンセル
+  contents:
+    successfully_created: "%{content}を登録しました"
+    successfully_updated:  "%{content}の設定を更新しました"
+    successfully_destroyed:  "%{content}の情報を削除しました"
+    subject:
+      edit: 編集
+      delete: 削除
+    create:
+      new_content: 記録項目を追加する
     new_form:
       cancel: キャンセル
     edit_form:

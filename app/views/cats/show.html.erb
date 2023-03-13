@@ -9,11 +9,14 @@
 
       <%# 記録項目 %>
       <div style="margin-left: 20px">
-        <div id="<%=subject.id%>_contents">
+        <div id="<%= subject.id %>_contents">
           <% subject.contents.each do |content| %>
             <%= render partial: 'contents/content', locals: { content: content } %>
           <% end %>
         </div>
+        <%= turbo_frame_tag "#{subject.id}_new_content" do %>
+          <%= link_to t('.new_content'), new_content_path(subject_id: subject.id) %>
+        <% end %>
       </div>
 
     <% end %>

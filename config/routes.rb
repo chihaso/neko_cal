@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-  root 'cats#index'
   resources :cats
   resources :subjects, except: %i[index show]
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :contents, except: %i[index show]
+  root 'cats#index'
 end
