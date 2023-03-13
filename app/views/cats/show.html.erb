@@ -1,15 +1,28 @@
 <h1><%= t('.title') %></h1>
 <%= render 'cat_setting', cat: @cat %>
+
+<%# 記録対象 %>
 <div style="margin-left: 20px">
   <div id="subjects">
     <% @cat.subjects.each do |subject| %>
       <%= render partial: 'subjects/subject', locals: { subject: subject } %>
+
+      <%# 記録項目 %>
+      <div style="margin-left: 20px">
+        <div id="<%=subject.id%>_contents">
+          <% subject.contents.each do |content| %>
+            <%= render partial: 'contents/content', locals: { content: content } %>
+          <% end %>
+        </div>
+      </div>
+
     <% end %>
   </div>
   <%= turbo_frame_tag 'new_subject' do %>
     <%= link_to t('.new_subject'), new_subject_path(cat_id: @cat.id) %>
   <% end %>
 </div>
+
 <div>
   <%= link_to t('.back_to_cats_page'), cats_path %>
 </div>
