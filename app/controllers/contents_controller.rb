@@ -5,6 +5,7 @@ class ContentsController < ApplicationController
 
   def new
     @subject = Subject.find(params[:subject_id])
+    @cat = @subject.cat
     @content = @subject.contents.new
   end
 
