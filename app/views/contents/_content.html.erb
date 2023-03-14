@@ -1,6 +1,7 @@
 <%= turbo_frame_tag content do %>
   <div style="display: flex">
     <%= content.name %>
+    <%= link_to t('.edit'), edit_content_path(content) %>
     <%= button_to t('.delete'), content, method: :delete %>
   </div>
 <% end %>

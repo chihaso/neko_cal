@@ -19,15 +19,17 @@ class ContentsController < ApplicationController
     end
   end
 
-  # def edit; end
+  def edit
+    @cat = @content.subject
+  end
 
-  # def update
-  #   if @content.update(content_params)
-  #     flash.now.notice = I18n.t('contents.successfully_updated', content: @content.name)
-  #   else
-  #     render :edit, status: :unprocessable_entity
-  #   end
-  # end
+  def update
+    if @content.update(content_params)
+      flash.now.notice = I18n.t('contents.successfully_updated', content: @content.name)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
 
   def destroy
     @content.destroy
