@@ -49,8 +49,8 @@ ja:
       cancel: キャンセル
   subjects:
     successfully_created: "%{subject}を登録しました"
-    successfully_updated:  "%{subject}の設定を更新しました"
-    successfully_destroyed:  "%{subject}の情報を削除しました"
+    successfully_updated:  "%{subject}を更新しました"
+    successfully_destroyed:  "%{subject}を削除しました"
     subject:
       edit: 編集
       delete: 削除
@@ -62,9 +62,9 @@ ja:
       cancel: キャンセル
   contents:
     successfully_created: "%{content}を登録しました"
-    successfully_updated:  "%{content}の設定を更新しました"
-    successfully_destroyed:  "%{content}の情報を削除しました"
-    subject:
+    successfully_updated:  "%{content}を更新しました"
+    successfully_destroyed:  "%{content}を削除しました"
+    content:
       edit: 編集
       delete: 削除
     create:

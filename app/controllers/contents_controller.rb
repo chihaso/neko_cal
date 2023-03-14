@@ -29,11 +29,11 @@ class ContentsController < ApplicationController
   #   end
   # end
 
-  # def destroy
-  #   @content.destroy
+  def destroy
+    @content.destroy
 
-  #   flash.now.notice = I18n.t('contents.successfully_destroyed', content: @content.name)
-  # end
+    flash.now.notice = I18n.t('contents.successfully_destroyed', content: @content.name)
+  end
 
   private
 
