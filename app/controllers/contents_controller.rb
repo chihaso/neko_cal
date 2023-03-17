@@ -21,7 +21,7 @@ class ContentsController < ApplicationController
   end
 
   def edit
-    @cat = @content.subject
+    @cat = @content.subject.cat
   end
 
   def update
