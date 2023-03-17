@@ -75,3 +75,9 @@ ja:
       cancel: キャンセル
   recording_method:
     duplicate_error: すでに記録方式が設定されています
+  recording_methods:
+    multi_level:
+      left_end_label: 左端のラベル
+      right_end_label: 右端のラベル
+      level: 段階
+
