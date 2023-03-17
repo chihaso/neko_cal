@@ -7,4 +7,8 @@ class Content < ApplicationRecord
   has_one :recording_method_multi_level, class_name: 'RecordingMethod::MultiLevel', dependent: :destroy
 
   validates :name, presence: true
+
+  def recording_method
+    recording_method_multi_level
+  end
 end

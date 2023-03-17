@@ -73,3 +73,5 @@ ja:
       cancel: キャンセル
     edit_form:
       cancel: キャンセル
+  recording_method:
+    duplicate_error: すでに記録方式が設定されています
