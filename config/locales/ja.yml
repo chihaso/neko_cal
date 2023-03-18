@@ -12,6 +12,13 @@ ja:
         name: 名前
       content:
         name: 項目名
+      recording_method/multi_level:
+        left_end_label: 左端のラベル
+        right_end_label: 右端のラベル
+        level: 段階
+      recording_method/binary:
+        false_label: 左のラベル
+        truth_label: 右のラベル
   application:
     validation_error_message:
       error_occurred: エラーが発生しました
@@ -77,7 +84,11 @@ ja:
     duplicate_error: すでに記録方式が設定されています
   recording_methods:
     multi_level:
+      method_name: "%{level}段階項目"
       left_end_label: 左端のラベル
       right_end_label: 右端のラベル
       level: 段階
-
+    binary:
+      method_name: 2値項目
+      false_label: 左のラベル
+      truth_label: 右のラベル

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_15_120341) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_17_224903) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -26,6 +26,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_15_120341) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["subject_id"], name: "index_contents_on_subject_id"
+  end
+
+  create_table "recording_method_binaries", force: :cascade do |t|
+    t.bigint "content_id", null: false
+    t.string "truth_label", null: false, comment: "真のラベル"
+    t.string "false_label", null: false, comment: "偽のラベル"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["content_id"], name: "index_recording_method_binaries_on_content_id"
   end
 
   create_table "recording_method_multi_levels", force: :cascade do |t|
@@ -47,6 +56,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_15_120341) do
   end
 
   add_foreign_key "contents", "subjects"
+  add_foreign_key "recording_method_binaries", "contents"
   add_foreign_key "recording_method_multi_levels", "contents"
   add_foreign_key "subjects", "cats"
 end
