@@ -3,6 +3,8 @@
 class SubjectsController < ApplicationController
   before_action :set_subject, except: %i[new create]
 
+  def show; end
+
   def new
     @cat = Cat.find(params[:cat_id])
     @subject = @cat.subjects.new

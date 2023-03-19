@@ -3,6 +3,8 @@
 class ContentsController < ApplicationController
   before_action :set_content, except: %i[new create]
 
+  def show; end
+
   def new
     @subject = Subject.find(params[:subject_id])
     @content = @subject.contents.new
@@ -21,9 +23,7 @@ class ContentsController < ApplicationController
     end
   end
 
-  def edit
-    @cat = @content.subject.cat
-  end
+  def edit; end
 
   def update
     if @content.update(content_params)
