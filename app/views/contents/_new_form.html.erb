@@ -1,13 +1,14 @@
 <%= turbo_frame_tag "#{subject.id}_new_content" do %>
   <%= form_with(model: content) do |form| %>
-    <%= render 'validation_error_message', resource: content %>
+    <%= render 'validation_error_message', resource: new_form %>
 
     <div style="display: flex">
       <%= form.label :name, style: "display: block" %>
       <%= form.text_field :name %>
+      <%= render 'recording_methods/new_form', form: form %>
       <%= form.hidden_field :subject_id, value: subject.id %>
       <%= form.submit %>
-      <%= link_to t('.cancel'), cat_path(cat) %>
+      <%= link_to t('.cancel'), cat_path(subject.cat) %>
     </div>
   <% end %>
 <% end %>

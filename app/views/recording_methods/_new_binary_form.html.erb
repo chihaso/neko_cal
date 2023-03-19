@@ -1,0 +1,12 @@
+<div style="display: flex;">
+  <%= form.fields_for :binary do |binary_form| %>
+    <div>
+      <%= binary_form.label t('recording_methods.binary.false_label'), style: "display: block" %>
+      <%= binary_form.text_field :false_label %>
+    </div>
+    <div>
+      <%= binary_form.label t('recording_methods.binary.truth_label'), style: "display: block" %>
+      <%= binary_form.text_field :truth_label %>
+    </div>
+  <% end %>
+</div>

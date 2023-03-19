@@ -84,7 +84,7 @@ ja:
     duplicate_error: すでに記録方式が設定されています
   recording_methods:
     multi_level:
-      method_name: "%{level}段階項目"
+      method_name: "複数段階項目"
       left_end_label: 左端のラベル
       right_end_label: 右端のラベル
       level: 段階
