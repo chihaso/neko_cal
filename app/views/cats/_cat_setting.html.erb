@@ -1,4 +1,4 @@
-<%= turbo_frame_tag "cat_setting_#{cat.id}" do %>
+<%= turbo_frame_tag cat do %>
   <div>
     <%= t('.name', name: cat.name) %>
     <%= link_to t('.edit'), edit_cat_path(cat) %>
