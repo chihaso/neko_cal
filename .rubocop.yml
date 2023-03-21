@@ -9,9 +9,14 @@ AllCops:
     - 'bin/{bundle,rails,rake}'
     - 'config.ru'
     - 'Rakefile'
-Rails/EnvironmentVariableAccess:
-  Enabled: false
+
 Style/ClassAndModuleChildren:
   Enabled: false
 Style/Documentation:
+  Enabled: false
+
+Naming/VariableNumber:
+  EnforcedStyle: snake_case
+
+Rails/EnvironmentVariableAccess:
   Enabled: false

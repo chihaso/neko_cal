@@ -8,15 +8,15 @@ class ContentsController < ApplicationController
   def new
     @subject = Subject.find(params[:subject_id])
     @content = @subject.contents.new
-    @new_form = Content::NewForm.new(nil, nil) # エラーメッセージのパーシャルで必要なので置いてるダミーオブジェクト
+    @content_form = Content::Form.new(nil, nil) # エラーメッセージのパーシャルで必要なので置いてるダミーオブジェクト
   end
 
   def create
     @subject = Subject.find(params[:content][:subject_id])
     @content = Content.new(content_params.merge(subject: @subject))
-    @new_form = Content::NewForm.new(@content, recording_method_params)
+    @content_form = Content::Form.new(@content, recording_method_params)
 
-    if @new_form.save
+    if @content_form.save
       flash.now.notice = I18n.t('contents.successfully_created', content: @content.name)
     else
       render :new, status: :unprocessable_entity
@@ -26,7 +26,10 @@ class ContentsController < ApplicationController
   def edit; end
 
   def update
-    if @content.update(content_params)
+    @content.assign_attributes(content_params)
+    @content_form = Content::Form.new(@content, recording_method_params)
+
+    if @content_form.save
       flash.now.notice = I18n.t('contents.successfully_updated', content: @content.name)
     else
       render :edit, status: :unprocessable_entity
@@ -46,13 +49,15 @@ class ContentsController < ApplicationController
   end
 
   def content_params
-    params.require(:content).permit(:name, :recording_method_type)
+    params.require(:content).permit(:name)
   end
 
   def recording_method_params
     params.require(:content).permit(
-      multi_level: %i[left_end_label right_end_label level],
-      binary: %i[false_label truth_label]
+      :recording_method_type, {
+        multi_level: %i[left_end_label right_end_label level],
+        binary: %i[false_label truth_label]
+      }
     )
   end
 end

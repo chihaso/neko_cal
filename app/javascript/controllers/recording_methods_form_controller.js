@@ -1,13 +1,13 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = [ "newForm" ]
-  static values = { newFormIndex: Number }
+  static targets = [ "form" ]
+  static values = { formIndex: Number }
 
-  switchNewForm(event) {
-    this.newFormIndex = event.target.selectedIndex
-    this.newFormTargets.forEach((formElement, index) => {
-      formElement.hidden = index !== this.newFormIndex
+  switchForm(event) {
+    this.formIndex = event.target.selectedIndex
+    this.formTargets.forEach((formElement, index) => {
+      formElement.hidden = index !== this.formIndex
     })
   }
 }

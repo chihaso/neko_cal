@@ -2,11 +2,11 @@
   <%= form.fields_for :binary do |binary_form| %>
     <div>
       <%= binary_form.label t('recording_methods.binary.false_label'), style: "display: block" %>
-      <%= binary_form.text_field :false_label %>
+      <%= binary_form.text_field :false_label, value: recording_method.class == RecordingMethod::Binary ? recording_method.false_label : nil %>
     </div>
     <div>
       <%= binary_form.label t('recording_methods.binary.truth_label'), style: "display: block" %>
-      <%= binary_form.text_field :truth_label %>
+      <%= binary_form.text_field :truth_label, value: recording_method.class == RecordingMethod::Binary ? recording_method.truth_label : nil %>
     </div>
   <% end %>
 </div>

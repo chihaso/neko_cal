@@ -9,4 +9,12 @@ module ApplicationHelper
       render('/recording_methods/binary', resource: content.recording_method)
     end
   end
+
+  def recording_method_option_index(recording_method)
+    if recording_method.present?
+      [RecordingMethod::MultiLevel, RecordingMethod::Binary].index(recording_method.class)
+    else
+      0
+    end
+  end
 end

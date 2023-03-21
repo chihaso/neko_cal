@@ -1,0 +1,26 @@
+<%# 選択中の方式に応じてフォームを表示する。フォームはStimulusにより切り替えられる。 %>
+<div
+  data-controller="recording-methods-form"
+  data-recording-methods-form-new-form-index-value="0"
+>
+  <%# 記録方式の選択 %>
+  <%= form.select(:recording_method_type,
+                  [
+                    [t('recording_methods.multi_level.method_name'), 'multi_level'],
+                    [t('recording_methods.binary.method_name'), 'binary']
+                  ],
+                  { selected: recording_method.to_s },
+                  {
+                    data: { action: 'change->recording-methods-form#switchForm' },
+                    disabled: form_type == 'edit'
+                  })
+  %>
+
+  <%# 上記セレクトボックスの選択状態に応じて以下のフォームのいずれか一つが表示される %>
+  <div data-recording-methods-form-target="form" <%= recording_method_option_index(recording_method) != 0 && 'hidden' %>>
+    <%= render 'recording_methods/multi_level_form', form: form, form_type: form_type, recording_method: recording_method %>
+  </div>
+  <div data-recording-methods-form-target="form" <%= recording_method_option_index(recording_method) != 1 && 'hidden' %>>
+    <%= render 'recording_methods/binary_form', form: form, form_type: form_type, recording_method: recording_method %>
+  </div>
+</div>

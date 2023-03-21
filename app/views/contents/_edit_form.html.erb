@@ -5,6 +5,7 @@
     <div style="display: flex">
       <%= form.label :name, style: "display: block" %>
       <%= form.text_field :name %>
+      <%= render 'recording_methods/form', form: form, form_type: 'edit', recording_method: content.recording_method %>
       <%= form.submit %>
       <%= link_to t('.cancel'), content_path(content) %>
     </div>
