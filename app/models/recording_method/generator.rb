@@ -9,6 +9,8 @@ class RecordingMethod::Generator
 
   # コントローラに渡されたパラメータから指定されたクラスの記録方式を生成し、contentに紐づける
   def generate
+    pp recording_method_type
+    pp @params
     @content.send("#{association_name}=", recording_method_class.new(attributes))
   end
 

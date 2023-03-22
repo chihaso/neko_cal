@@ -1,7 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
+poop_mount:
+  name: 量
+  subject: poop
 
-two:
-  name: MyString
+poop_hair :
+  name: 毛の有無
+  subject: poop
+
+pee_mount:
+  name: 量
+  subject: pee
